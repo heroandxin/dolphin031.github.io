@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Smart Logistic Warehouse System in Walmart
-image: "/posts/Walmart_warehouse.jpg"
+image: "/posts/Walmart warehouse.png"
 tags: [Numpy, Python, Logistic]
 ---
 
