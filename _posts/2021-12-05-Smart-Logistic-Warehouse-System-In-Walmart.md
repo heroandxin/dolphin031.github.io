@@ -54,8 +54,9 @@ In the provided dataset named "Product.csv" as shown below, each column contains
 
 Every two rows contain all product information in one warehouse, and there are 300 warehouses (Warehouse No.0 - Warehouse No.299) in total.
 
-<br>
+
 ![alt text](/img/posts/Product_and_Warehouse_Information.jpg "Product and Warehouse Information Table")
+
 
 <br>
 For each warehouse, there are 4 variables:
@@ -70,8 +71,9 @@ For each warehouse, there are 4 variables:
 
 Specifically, for each warehouse, there is a weight capacity (C) of 650, which means that the total weight of n products that are selected to be stored in a warehouse should be less than or equal to 650. Each available product i has its own weight (Wi) and value (Vi). Besides, the product information for each warehouse is different.
 
-<br>
+
 ![alt text](/img/posts/Capacity_Limit.jpg "Capacity Limit For Each Warehouse")
+
 
 <br>
 # 02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse  <a name="business-problem1-best-product-selection"></a>
