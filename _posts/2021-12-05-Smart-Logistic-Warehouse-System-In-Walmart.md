@@ -2,7 +2,7 @@
 layout: post
 title: Smart Logistic Warehouse System in Walmart
 image: "/posts/Walmart_warehouse.jpg"
-tags: [Numpy, Python, Logistic]
+tags: [Optimization, Logistic, Retail, Numpy, Python]
 ---
 
 # Table of contents
@@ -14,7 +14,7 @@ tags: [Numpy, Python, Logistic]
     - [Growth/Next Steps](#overview-growth)
     - [Key Definition](#overview-definition)
 - [01. Data Overview](#data-overview)
-- [02. Modelling Overview](#modelling-overview)
+- [02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse](#business-problem1-best-product-selection)
 - [03. Linear Regression](#linreg-title)
 - [04. Decision Tree](#regtree-title)
 - [05. Random Forest](#rf-title)
@@ -72,6 +72,8 @@ Specifically, for each warehouse, there is a weight capacity (C) of 650, which m
 
 <br>
 ![alt text](/img/posts/Capacity_Limit.jpg "Capacity Limit For Each Warehouse")
+
+# 02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse  <a name="business-problem1-best-product-selection"></a>
 
 ```python
 
