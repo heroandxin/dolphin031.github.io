@@ -54,11 +54,8 @@ In the provided dataset named "Product.csv" as shown below, each column contains
 
 Every two rows contain all product information in one warehouse, and there are 300 warehouses (Warehouse No.0 - Warehouse No.299) in total.
 
-
 ![alt text](/img/posts/Product_and_Warehouse_Information.jpg "Product and Warehouse Information Table")
 
-
-<br>
 For each warehouse, there are 4 variables:
 
 1.n - total number of products chosen to be stored in the warehouse
@@ -71,11 +68,8 @@ For each warehouse, there are 4 variables:
 
 Specifically, for each warehouse, there is a weight capacity (C) of 650, which means that the total weight of n products that are selected to be stored in a warehouse should be less than or equal to 650. Each available product i has its own weight (Wi) and value (Vi). Besides, the product information for each warehouse is different.
 
-
 ![alt text](/img/posts/Capacity_Limit.jpg "Capacity Limit For Each Warehouse")
 
-
-<br>
 # 02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse  <a name="business-problem1-best-product-selection"></a>
 
 The manager wants to choose products that have the top “Value_Weight Ratios” as many as possible before reaching the capacity of each warehouse (650). 
@@ -117,7 +111,55 @@ let's write a function "get_max_value" which could do the following 4 things:
 * Calculate the Value_Weight Ratio for each product.
 * Sort the calculated Value_Weight Ratios in descending order.
 * Select the products from the top of the descending order to the bottom while looking at the accumulated weight of products to make sure the accumulated weight does not exceed the warehouse weight capacity.
-* Calculate the corresponding estimated value for this warehouse after finishing product selection.
+* Calculate the corresponding total value and accumulated weight for this warehouse after finishing product selection.
+
+```python
+
+def get_max_value(weights, values): 
+    # convert String to float and compute ratio
+    weightNumber = []
+    valueNumber = []
+    for i in range(len(weights)):
+        x = float(weights[i])
+        y = float(values[i])
+        weightNumber.append(x)
+        valueNumber.append(y)
+    Array1=np.array(weightNumber)
+    Array2=np.array(valueNumber)
+    #this is the ratio
+    ratio = Array2/Array1
+    
+    # print(ratio)
+    map = {}
+    for i in range(len(ratio)):
+        map[i] = ratio[i]
+        
+    # sort the map
+    marklist = sorted(map.items(), key=lambda x:x[1], reverse=True)
+    # this is ratio and item index sorting descending order in ratio
+    sortdict = dict(marklist)
+    
+    # print(sortdict)
+    capacity = 650
+    sumCapacity = 0
+    
+    #interate from sorted dict and find out what items to be chosen based on capacity
+    maxValue = 0
+    weightToValue = {}
+    
+    for key in sortdict:
+        if (sumCapacity + weightNumber[key] < capacity):
+            sumCapacity += weightNumber[key]
+            maxValue += valueNumber[key]
+    
+    # print(sumCapacity) this is total capacity
+    weightToValue[sumCapacity] = maxValue
+    return weightToValue        
+
+```
+
+
+
 
 
 
