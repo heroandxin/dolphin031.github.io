@@ -50,17 +50,24 @@ Recently, Walmart is planning a 21-day countdown promotion for Christmas, and Ma
 ---
 # 01. Data Overview  <a name="data-overview"></a>
 
-The manager provided me a dataset named "Product.csv".
-
-Each column contains the weight and value of each product, and there are totally 50 available product options (Product No.0 - Product No.49) that can be selected into one warehouse.
+In the provided dataset named "Product.csv" as shown below, each column contains the weight and value of each product, and there are totally 50 available product options (Product No.0 - Product No.49) that can be selected into one warehouse.
 
 Every two rows contain all product information in one warehouse, and there are 300 warehouses (Warehouse No.0 - Warehouse No.299) in total.
 
 <br>
 ![alt text](/img/posts/Product_and_Warehouse_Information.jpg "Product and Warehouse Information Table")
 
+<br>
+For each warehouse, there are 4 variables:
+1.n - total number of products chosen to be stored in the warehouse
+2.C - total weight capacity of the warehouse
+3.Vi - the value of available product i 
+4.Wi - the weight of available product i 
+Specifically, for each warehouse, there is a weight capacity (C) of 650, which means that the total weight of n products that are selected to be stored in a warehouse should be less than or equal to 650. Each available product i has its own weight (Wi) and value (Vi). Besides, the product information for each warehouse is different.
 
 <br>
+![alt text](/img/posts/Capacity_Limit.jpg "Capacity Limit For Each Warehouse")
+
 ```python
 
 Firstly, I love Python so much, here is some code!
