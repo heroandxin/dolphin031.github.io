@@ -15,7 +15,7 @@ tags: [Optimization, Logistic, Retail, Numpy, Python]
     - [Key Definition](#overview-definition)
 - [01. Data Overview](#data-overview)
 - [02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse](#business-problem1-best-product-selection)
-- [03. Linear Regression](#linreg-title)
+- [03. Solution For Business Problem 1](#solution-for-business-problem1)
 - [04. Decision Tree](#regtree-title)
 - [05. Random Forest](#rf-title)
 - [06. Modelling Summary](#modelling-summary)
@@ -73,31 +73,52 @@ Specifically, for each warehouse, there is a weight capacity (C) of 650, which m
 <br>
 ![alt text](/img/posts/Capacity_Limit.jpg "Capacity Limit For Each Warehouse")
 
+<br>
 # 02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse  <a name="business-problem1-best-product-selection"></a>
 
+The manager wants to choose products that have the top “Value_Weight Ratios” as many as possible before reaching the capacity of each warehouse (650). 
+
+Calculating the estimated total value and accumulated weight of each 300 warehouses will be helpful for the later decision of cross-warehouse-transshipment solution. 
+
+<br>
+# 03. Solution for Business Problem 1  <a name="solution-for-business-problem1"></a>
+
+I utlise the numpy package within Python to optimize the product selection. The code sections below are broken up into 4 key sections:
+
+* Data Import
+* Estimating Value And Weight For One Warehouse
+* Model Training
+* Performance Assessment
+
+<br>
+### Data Import <a name="product-data-import"></a>
+
+Since we saved our modelling data as a pickle file, we import it.  We ensure we remove the id column, and we also ensure our data is shuffled.
+
 ```python
 
-Firstly, I love Python so much, here is some code!
+# Numpy package is the only package I could use for this project
+import numpy as np
+
+# Read the dataset from "Products.csv"
+# Using .open() method to open files and return a file object
+file_name='Products.csv'
+f = open(file_name, "r")
 
 ```
-my_love_for_python = 0
-my_python_knowledge = 0
 
-for day in lifetime:
-    my_love_for_python += 1
-    my_python_knowledge += 1
-```
+<br>
+### Estimating Value And Weight For One Warehouse <a name="estimated-value-and-weight-for-one-warehouse"></a>
 
-Just so you really see how much I love Python, here is some code BUT with some colours for keywords & functionality!
+let's write a function "get_max_value" which could do the following 4 things:
 
-```python
-my_love_for_python = 0
-my_python_knowledge = 0
+* Calculate the Value_Weight Ratio for each product.
+* Sort the calculated Value_Weight Ratios in descending order.
+* Select the products from the top of the descending order to the bottom while looking at the accumulated weight of products to make sure the accumulated weight does not exceed the warehouse weight capacity.
+* Calculate the corresponding estimated value for this warehouse after finishing product selection.
 
-for day in lifetime:
-    my_love_for_python += 1
-    my_python_knowledge += 1  
-```
+
+
 
 Here is an **unordered list** showing some things I love about Python
 
