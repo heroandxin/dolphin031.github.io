@@ -5,13 +5,33 @@ image: "/posts/Walmart_warehouse.jpg"
 tags: [Numpy, Python, Logistic]
 ---
 
+Recently, Walmart is planning a 21-day countdown promotion for Christmas, and Marlon Brown, a manager of Walmart Company, must make sure that the stored products in each warehouse are proper and sufficient. After consideration, Marlon breaks this project into 2 parts:
+
+1.Selecting products for each warehouse before the promotion starts
+2.Simulating cross-warehouse-transshipment solution for possible product shortage problem for a random warehouse after the promotion starts 
+
+Working as a consultant, I need to assist Marlon with my analysis to better preparation for the upcoming promotion. 
+
 # My first project
 ## is all about
 ### how much
 #### I LOVE
 ##### Python & Coffee!
 
+
+
+
+
+
 ---
+# 01. Data Overview  <a name="data-overview"></a>
+
+Each column contains the weight and value of each product, and there are totally 50 available product options (Product No.0 - Product No.49) that can be selected into one warehouse.
+Every two rows contain all product information in one warehouse, and there are 300 warehouses (Warehouse No.0 - Warehouse No.299) in total.
+
+
+
+```python
 
 Firstly, I love Python so much, here is some code!
 
