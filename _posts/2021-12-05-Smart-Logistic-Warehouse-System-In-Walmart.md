@@ -5,6 +5,29 @@ image: "/posts/Walmart_warehouse.jpg"
 tags: [Numpy, Python, Logistic]
 ---
 
+# Table of contents
+
+- [00. Project Overview](#overview-main)
+    - [Context](#overview-context)
+    - [Actions](#overview-actions)
+    - [Results](#overview-results)
+    - [Growth/Next Steps](#overview-growth)
+    - [Key Definition](#overview-definition)
+- [01. Data Overview](#data-overview)
+- [02. Modelling Overview](#modelling-overview)
+- [03. Linear Regression](#linreg-title)
+- [04. Decision Tree](#regtree-title)
+- [05. Random Forest](#rf-title)
+- [06. Modelling Summary](#modelling-summary)
+- [07. Predicting Missing Loyalty Scores](#modelling-predictions)
+- [08. Growth & Next Steps](#growth-next-steps)
+
+___
+
+# 00. Project Overview  <a name="overview-main"></a>
+
+### Context <a name="overview-context"></a>
+
 Recently, Walmart is planning a 21-day countdown promotion for Christmas, and Marlon Brown, a manager of Walmart Company, must make sure that the stored products in each warehouse are proper and sufficient. After consideration, Marlon breaks this project into 2 parts:
 
 1.Selecting products for each warehouse before the promotion starts
