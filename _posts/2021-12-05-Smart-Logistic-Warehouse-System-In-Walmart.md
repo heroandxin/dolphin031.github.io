@@ -56,6 +56,9 @@ Each column contains the weight and value of each product, and there are totally
 
 Every two rows contain all product information in one warehouse, and there are 300 warehouses (Warehouse No.0 - Warehouse No.299) in total.
 
+<br>
+![alt text](/img/posts/Product_and_Warehouse_Information.png "Product and Warehouse Information Table")
+
 
 
 ```python
