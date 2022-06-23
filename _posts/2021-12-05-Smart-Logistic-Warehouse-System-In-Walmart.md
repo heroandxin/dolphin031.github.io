@@ -59,10 +59,15 @@ Every two rows contain all product information in one warehouse, and there are 3
 
 <br>
 For each warehouse, there are 4 variables:
+
 1.n - total number of products chosen to be stored in the warehouse
+
 2.C - total weight capacity of the warehouse
+
 3.Vi - the value of available product i 
+
 4.Wi - the weight of available product i 
+
 Specifically, for each warehouse, there is a weight capacity (C) of 650, which means that the total weight of n products that are selected to be stored in a warehouse should be less than or equal to 650. Each available product i has its own weight (Wi) and value (Vi). Besides, the product information for each warehouse is different.
 
 <br>
