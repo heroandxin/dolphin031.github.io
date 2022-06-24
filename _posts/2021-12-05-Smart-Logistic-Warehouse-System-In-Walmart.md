@@ -5,6 +5,8 @@ image: "/posts/Walmart_warehouse.jpg"
 tags: [Optimization, Logistic, E-Commerce, Retail, Numpy, Python]
 ---
 
+In this project I’m going to take a challenge of only using one package, Numpy, in Python that can efficiently provide Walmart's 300 warehouses on product selection and how to replenish product supply in a timely manner in the event of a sudden out-of-stock situation.
+
 # Table of contents
 
 - [00. Project Overview](#overview-main)
