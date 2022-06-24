@@ -14,7 +14,6 @@ In this project I’m going to take a challenge of only using one package, Numpy
     - [Actions](#overview-actions)
     - [Results](#overview-results)
     - [Growth/Next Steps](#overview-growth)
-    - [Key Definition](#overview-definition)
 - [01. Data Overview](#data-overview)
 - [02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse](#business-problem1-best-product-selection)
 - [03. Solution For Business Problem 1](#solution-for-business-problem1)
@@ -37,29 +36,16 @@ Recently, Walmart is planning a 21-day countdown promotion for Christmas, and Ma
 
 ##### Working as a consultant, I need to assist Marlon with my analysis to better preparation for the upcoming promotion. 
 
-<br>
-<br>
 ### Actions <a name="overview-actions"></a>
 
 For problem 1, I first needed to calculate the maximized total value and accumulated weight for one warehouse. I then applied it to the other left, creating a function "get_max_value" to help calculate the Value_Weight Ratio for each product, sort the Ratios in descending order, and select the products from the top of the descending order to the bottom while looking at the accumulated weight of products to make sure the accumulated weight does not exceed the warehouse weight capacity. And I got the optimal options, all the pairs of weights and values, by iterating through 300 warehouses.
 
 For problem 2, Based on the selected warehouse p, I found the corresponding distance between this warehouse No.p and each of the other ones from the distance matrix. Then I calculated the “Value_per_Weight” ratio for each remaining warehouse taking distance and transpotation cost into consideration, sort the ratio in descending order and choose top helpers with 10 highest ratios.
-<br>
-<br>
 
 ### Results <a name="overview-results"></a>
 
 Preparing for the Christmas promotion, I suggested to the manager the best product selection for each warehouse, and if any one warehouse was out of stock, automatically generated the best inter-warehouse shipping plan.
 
-<br>
-**Metric 1: Adjusted R-Squared (Test Set)**
-
-* Random Forest = 0.955
-* Decision Tree = 0.886
-* Linear Regression = 0.754
-
-<br>
-<br>
 ### Growth/Next Steps <a name="overview-growth"></a>
 
 Although the two problems of the manager are effectively solved through the program, they are all in a simulated environment after all. In the actual Walmart promotion event, the product and warehouse information will not be as simple as weight and value, there will be more variables and contingencies need to be considered, so more complex models may need to be introduced depending on the complexity of the business.
