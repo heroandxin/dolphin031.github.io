@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Smart Logistic Warehouse System in Walmart
+title: Preparing Smart Logistic Warehouse System in Walmart For Promotion Event Using Python
 image: "/posts/Walmart_warehouse.jpg"
-tags: [Optimization, Logistic, Retail, Numpy, Python]
+tags: [Optimization, Logistic, E-Commerce, Retail, Numpy, Python]
 ---
 
 # Table of contents
@@ -16,11 +16,8 @@ tags: [Optimization, Logistic, Retail, Numpy, Python]
 - [01. Data Overview](#data-overview)
 - [02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse](#business-problem1-best-product-selection)
 - [03. Solution For Business Problem 1](#solution-for-business-problem1)
-- [04. Decision Tree](#regtree-title)
-- [05. Random Forest](#rf-title)
-- [06. Modelling Summary](#modelling-summary)
-- [07. Predicting Missing Loyalty Scores](#modelling-predictions)
-- [08. Growth & Next Steps](#growth-next-steps)
+- [04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock](#business-problem2-top-alternative-when-a random-warehouse-is-out-of-stock)
+- [05. Solution for Business Problem 2](#solution-for-business-problem2)
 
 ___
 
@@ -34,7 +31,38 @@ Recently, Walmart is planning a 21-day countdown promotion for Christmas, and Ma
 
 2.Simulating cross-warehouse-transshipment solution for possible product shortage problem for a random warehouse after the promotion starts 
 
+( Note: Can not use packages other than Numpy.)
+
 ##### Working as a consultant, I need to assist Marlon with my analysis to better preparation for the upcoming promotion. 
+
+<br>
+<br>
+### Actions <a name="overview-actions"></a>
+
+For problem 1, I first needed to calculate the maximized total value and accumulated weight for one warehouse. I then applied it to the other left, creating a function "get_max_value" to help calculate the Value_Weight Ratio for each product, sort the Ratios in descending order, and select the products from the top of the descending order to the bottom while looking at the accumulated weight of products to make sure the accumulated weight does not exceed the warehouse weight capacity. And I got the optimal options, all the pairs of weights and values, by iterating through 300 warehouses.
+
+For problem 2, Based on the selected warehouse p, I found the corresponding distance between this warehouse No.p and each of the other ones from the distance matrix. Then I calculated the “Value_per_Weight” ratio for each remaining warehouse taking distance and transpotation cost into consideration, sort the ratio in descending order and choose top helpers with 10 highest ratios.
+<br>
+<br>
+
+### Results <a name="overview-results"></a>
+
+Preparing for the Christmas promotion, I suggested to the manager the best product selection for each warehouse, and if any one warehouse was out of stock, automatically generated the best inter-warehouse shipping plan.
+
+<br>
+**Metric 1: Adjusted R-Squared (Test Set)**
+
+* Random Forest = 0.955
+* Decision Tree = 0.886
+* Linear Regression = 0.754
+
+<br>
+<br>
+### Growth/Next Steps <a name="overview-growth"></a>
+
+Although the two problems of the manager are effectively solved through the program, they are all in a simulated environment after all. In the actual Walmart promotion event, the product and warehouse information will not be as simple as weight and value, there will be more variables and contingencies need to be considered, so more complex models may need to be introduced depending on the complexity of the business.
+<br>
+<br>
 
 ---
 # 01. Data Overview  <a name="data-overview"></a>
@@ -168,7 +196,6 @@ print(storeValueCapacity)
 
 ---
 # 04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock <a name="business-problem2-top-alternative-when-a random-warehouse-is-out-of-stock"></a>
-
 <br>
 ### Generating the 300 X 300 distance matrix <a name="generate-300*300-distance-matrix"></a>
 
@@ -208,11 +235,9 @@ The manager randomly selects No.p warehouse that is out-of-stock in this simulat
 
 There are 3 things to do:
 
-Based on the generated p, find the corresponding distance between this warehouse No.p and each of the other Helpers from the distance matrix generated in the previous step.
-
-Find the corresponding total value and total weight of all products stored in each Helper (have calculated these numbers in Problem 1).
-
-Calculate the “Value_per_Weight” ratio for each Helper (formula as below), sort the ratio in descending order and choose top helpers with 10 highest “Value_per_Weight”ratios.
+* Based on the generated p, find the corresponding distance between this warehouse No.p and each of the other Helpers from the distance matrix generated in the previous step.
+* Find the corresponding total value and total weight of all products stored in each Helper (have calculated these numbers in Problem 1).
+* Calculate the “Value_per_Weight” ratio for each Helper (formula as below), sort the ratio in descending order and choose top helpers with 10 highest “Value_per_Weight”ratios.
 
 ![alt text](/img/posts/Value_Per_Weight_Formula.jpg "Value Per Weight Formula")
 
