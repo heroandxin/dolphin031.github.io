@@ -17,7 +17,7 @@ In this project I’m going to take a challenge of only using one package, Numpy
 - [01. Data Overview](#data-overview)
 - [02. Business Problem 1: Selecting The Best Product Mix For Each Warehouse](#business-problem1-best-product-selection)
 - [03. Solution For Business Problem 1](#solution-for-business-problem1)
-- [04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock](#business-problem2-top-alternative-when-a random-warehouse-is-out-of-stock)
+- [04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock](#business-problem2-top-alternative-when-a-random-warehouse-is-out-of-stock)
 - [05. Solution for Business Problem 2](#solution-for-business-problem2)
 
 ___
@@ -183,7 +183,7 @@ print(storeValueCapacity)
 ```
 
 ---
-# 04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock <a name="business-problem2-top-alternative-when-a random-warehouse-is-out-of-stock"></a>
+# 04. Business Problem 2: Top Alternative When A Random Warehouse Is Out-of-Stock <a name="business-problem2-top-alternative-when-a-random-warehouse-is-out-of-stock"></a>
 <br>
 ### Generating the 300 X 300 distance matrix <a name="generate-300*300-distance-matrix"></a>
 
